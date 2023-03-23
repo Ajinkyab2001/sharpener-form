@@ -1,16 +1,14 @@
 function myfunc(event){
     event.preventDefault();
+     var myobj = {
+        full_name : document.getElementById("Name").value,
+        email_id : document.getElementById("Email").value,
+        phone_no : document.getElementById("Phone").value,
+        dates : document.getElementById("date").value,
+        times : document.getElementById("time").value,
+     }
 
-    var full_name = document.getElementById("Name").value;
-    var email_id = document.getElementById("Email").value;
-    var phone_no = document.getElementById("Phone").value;
-    var dates = document.getElementById("date").value;
-    var times = document.getElementById("time").value;
+    localStorage.setItem('user_details',JSON.stringify(myobj));
  
-    localStorage.setItem('is_full_name',full_name);
-    localStorage.setItem('is_email_id',email_id);
-    localStorage.setItem('is_phone_no',phone_no);
-    localStorage.setItem('is_date',dates);
-    localStorage.setItem('is_times',times);
     
 }
