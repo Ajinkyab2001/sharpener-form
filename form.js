@@ -26,6 +26,16 @@ function showUserOnScreen(myobj){
     const parentItem = document.getElementById('ddd');
     const childItem = document.createElement('div');
     childItem.textContent = myobj.full_name +' '+myobj.email_id+' ';
+    
+    const deleteButton = document.createElement('input')
+    deleteButton.type = "button"
+    deleteButton.value = 'delete'
+    deleteButton.onclick = () => {
+        localStorage.removeItem(myobj.email_id)
+        parentItem.removeItem(childItem)
+    }
+    childItem.appendChild(deleteButton)
+
     parentItem.appendChild(childItem);
 }
 
