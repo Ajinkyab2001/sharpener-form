@@ -8,7 +8,24 @@ function myfunc(event){
         times : document.getElementById("time").value,
      }
 
-    localStorage.setItem('user_details',JSON.stringify(myobj));
- 
-    
+   
+     let user_records = [];
+   
+     user_records.push({
+        "user_details": myobj,
+     
+      })
+
+      showUserOnScreen(myobj)
+     localStorage.setItem(myobj.email_id ,JSON.stringify(user_records));
+
 }
+
+
+function showUserOnScreen(myobj){
+    const parentItem = document.getElementById('ddd');
+    const childItem = document.createElement('div');
+    childItem.textContent = myobj.full_name +' '+myobj.email_id+' ';
+    parentItem.appendChild(childItem);
+}
+
